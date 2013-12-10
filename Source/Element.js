@@ -212,6 +212,10 @@ ElProto = {
 	},
 	// @end
 
+	getElement: function(query){
+		return document.id(this.querySelectorAll(query)[0]);
+	},
+
 	getElements: function(query){
 		return new Elements(this.querySelectorAll(query));
 	},
