@@ -342,7 +342,7 @@ ElProto = {
 		var classes = this.className.split(' '),
 			index = classes.indexOf(removeClass);
 		// No need to remove the class if it doesn't exist
-		if (index <= 0) return this;
+		if (index < 0) return this;
 		classes.splice(index, 1);
 		if (classes.length)
 			this.className = classes.join(' ');
