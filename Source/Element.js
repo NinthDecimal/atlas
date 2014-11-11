@@ -240,6 +240,14 @@ ElProto = {
 				this.setStyles(value);
 			break;
 
+			case 'text':
+				this.textContent = value;
+			break;
+
+			case 'html':
+				this.innerHTML = value;
+			break;
+
 			case 'innerHTML':
 				this.innerHTML = value;
 			break;
