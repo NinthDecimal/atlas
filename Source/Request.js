@@ -138,7 +138,7 @@ errors = function(success){
 	};
 };
 
-global.Atlas.extend(global, 'Request', Request, true);
+global.Atlas.extend(global, 'Request', Request);
 
 }).call(this, this);
 // @end
