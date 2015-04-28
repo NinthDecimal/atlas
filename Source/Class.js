@@ -172,7 +172,7 @@ Atlas.extend(Class, {
 		},
 
 		clearEvents: function(event){
-			if (!this.__events__[event]) {
+			if (!this.__events__ || !this.__events__[event]) {
 				return this;
 			}
 			this.__events__[event].length = 0;
