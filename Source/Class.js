@@ -169,6 +169,14 @@ Atlas.extend(Class, {
 			args = Array.prototype.slice.call(arguments, 1);
 			for (f = 0, l = list.length; f < l; f++) list[f].apply(this, args);
 			return this;
+		},
+
+		clearEvents: function(event){
+			if (!this.__events__[event]) {
+				return this;
+			}
+			this.__events__[event].length = 0;
+			return this;
 		}
 
 	}),
