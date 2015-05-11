@@ -385,6 +385,11 @@ ElProto = {
 		return this.parentNode ? this.parentNode.removeChild(this) : this;
 	},
 
+	empty: function(){
+		this.getChildren().dispose();
+		return this;
+	},
+
 	// Stolen from MooTools
 	getSize: function(){
 		return {
