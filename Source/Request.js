@@ -61,10 +61,14 @@ Request = new Class({
 			this.xhr.send(null);
 		else
 			this.xhr.send(query);
+
+		this._running = true;
+		this.fireEvent('start', this);
 	},
 
 	readyStateChange: function(){
 		if (this.xhr.readyState !== 4) return;
+		this._running = false;
 		if ((this.xhr.status >= 200 && this.xhr.status < 300) || this.xhr.status === 0) this.success();
 		else this.failure();
 		this.fireEvent('complete', this.xhr.responseText);
@@ -106,6 +110,7 @@ Request.JSON = new Class({
 
 	readyStateChange: function(){
 		if (this.xhr.readyState !== 4) return;
+		this._running = false;
 		try {
 			this.jsonResponse = JSON.parse(this.xhr.responseText);
 		}
