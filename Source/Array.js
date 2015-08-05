@@ -22,17 +22,20 @@ Atlas.extend(Array, {
 		return newArr;
 	},
 
-	// Stolen from Mootools
-	from: function(item){
-		return (Atlas.__isEnumerable__(item) && typeof item != 'string') ? (Atlas.typeOf(item) === 'array') ? item : Array.prototype.slice.call(item) : [item];
-	},
-
 	// Flatten all args
 	flatten: function(){
 		return Array.prototype.concat.apply([], Array.from(arguments)).flatten();
 	}
 
 }, true);
+
+// We must overwrite a browsers inbuilt Array.from
+Atlas.extend(Array, {
+	// Stolen from Mootools
+	from: function(item){
+		return (Atlas.__isEnumerable__(item) && typeof item != 'string') ? (Atlas.typeOf(item) === 'array') ? item : Array.prototype.slice.call(item) : [item];
+	},
+});
 
 fixNodelist = function(nodelist){
 	var ret = [], x;
