@@ -86,7 +86,7 @@ Atlas.implement(Array, {
 	// @end
 
 	each: function(){
-		each.apply(this, Array.from(arguments));
+		each.apply(this, arguments);
 		return this;
 	},
 
