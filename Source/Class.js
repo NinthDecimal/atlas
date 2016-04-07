@@ -154,7 +154,8 @@ Atlas.extend(Class, {
 
 			var list = this.__events__[event], i;
 			if (!list) return this;
-			if (list.indexOf(fn) === -1) return this;
+			i = list.indexOf(fn);
+			if (i === -1) return this;
 			list.splice(i, 1);
 			if (!list.length) delete this.__events__[event];
 			return this;
